@@ -1,8 +1,8 @@
 # TP Integrador 
 
-**Materia:** PAW
-**Fecha de Entrega:** 27/03/2026
-**1era Entrega**
+**Materia:** PAW  
+**Fecha de Entrega:** 27/03/2026  
+**1era Entrega**  
 
 ## Introducción
 
