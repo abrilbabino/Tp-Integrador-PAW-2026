@@ -7,10 +7,9 @@
     </head>
     <body> 
         <header>
-        <div>
+        <figure>
             <img src="logo.png" alt="Logo de PawPrints">
-            <span>PawPrints - Detalle Libro</span>
-        </div>
+        </figure>
 
         <form action="/buscar" method="GET">
             <input type="search" name= "busqueda" placeholder="Buscar en el sitio...">
@@ -38,44 +37,35 @@
             <form action="/procesar-reserva" method="POST">
                 <fieldset>
                     <legend>Datos Personales</legend>
-                    <div>
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ingresá tu nombre" required>
-                    </div>
-                    <div>
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" name="email" id="email" placeholder="Ingresá tu email" required>
-                    </div>
-                    <div>
-                        <label for="tel">Teléfono</label>
-                        <input type="tel" id="tel" name="tel" placeholder="Ingresá tu teléfono">
-                    </div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresá tu nombre" required>
+
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" id="email" placeholder="Ingresá tu email" required>
+                    
+                    <label for="tel">Teléfono</label>
+                    <input type="tel" id="tel" name="tel" placeholder="Ingresá tu teléfono">
                 </fieldset>
 
                 <br>
 
                 <fieldset>
                     <legend>Detalles del Libro</legend>
-                    <div>
-                        <label for="CantLibro">Cantidad de libros a reservar</label>
-                        <input type="number" id="CantLibro" name="CantLibros" placeholder="Ingresá la cantidad" min="1" max="5" required>
-                    </div>
-                    <div>
-                        <label for="SelecLibros">Selección de libro del catálogo</label>
-                        <input list="listaLibros" id="SelecLibros" name="SelecLibros" placeholder="Ingresá el título" required>
-                        <datalist id="listaLibros">
-                            <option value="Libro1"></option>
-                            <option value="Libro2"></option>
-                            <option value="Libro3"></option>
-                        </datalist>
-                    </div>
+                    <label for="CantLibro">Cantidad de libros a reservar</label>
+                    <input type="number" id="CantLibro" name="CantLibros" placeholder="Ingresá la cantidad" min="1" max="5" required>
+
+                    <label for="SelecLibros">Selección de libro del catálogo</label>
+                    <input list="listaLibros" id="SelecLibros" name="SelecLibros" placeholder="Ingresá el título" required>
+                    <datalist id="listaLibros">
+                        <option value="Libro1"></option>
+                        <option value="Libro2"></option>
+                        <option value="Libro3"></option>
+                    </datalist>
                 </fieldset>
 
                 <br>
 
-                <div class="botónReserva">
-                    <button type="submit">Reservar Libro</button>
-                </div>
+                <button type="submit">Reservar Libro</button>
             </form>
         </section>
         
@@ -92,14 +82,14 @@
                 <p>Email: <a href="mailto:info@pawprints.com">info@pawprints.com</a></p>
             </address>
 
-            <div>
+            <section>
                 <p>Seguinos en nuestras redes sociales:</p>
                 <ul>
                     <li><a href="https://facebook.com">Facebook</a></li>
                     <li><a href="https://twitter.com">Twitter</a></li>
                     <li><a href="https://www.instagram.com/pawmap.ar/">Instagram</a></li>
                 </ul>
-            </div>
+            </section>
 
             <p><small>&copy; 2026 PawPrints</small></p>
         </footer>

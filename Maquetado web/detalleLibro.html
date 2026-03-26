@@ -7,10 +7,9 @@
     </head>
     <body>
         <header>
-        <div>
+        <figure>
             <img src="logo.png" alt="Logo de PawPrints">
-            <span>PawPrints - Detalle Libro</span>
-        </div>
+        </figure>
 
         <form action="/buscar" method="GET">
             <input type="search" name= "busqueda" placeholder="Buscar en el sitio...">
@@ -30,66 +29,64 @@
 
     <main>
         <section class="Detalle-Libro">
-            <div class="Portada-Libro">
+            <figure class="Portada-Libro">
                 <img src="Portada-Libro" alt="Portada del Libro">
-                <h2>Título del Libro</h2>
-            </div>
+                <figcaption><h2>Título del Libro</h2></figcaption>
+            </figure>
             
-            <div class="Descripción Libro">
+            <article class="Descripción Libro">
             <h2>Descripción</h2>
             <p>Una descripción sobre el libro va aquí</p>
             <h2>Autor</h2>
             <p>Nombre del Autor</p>
-            </div>
+            </article>
 
-            <div class="Compra-Reserva">
+            <section class="Compra-Reserva">
                 <h2>$19.99</h2>
                 <span class="Stock">Stock Disponible</span>
 
-                <div class="Botones">
-                    <button type="button">Agregar al Carrito</button>
-                    <button type="button">Reservar Gratis</button>
-                </div>
-            </div>
+                <button type="button">Agregar al Carrito</button>
+                <button type="button">Reservar Gratis</button>
+            </section>
 
         </section>
 
         <section class="Descripción Autor">
-            <div class="Imágen Autor">
+            <figure class="Imágen Autor">
                 <img src="Imágen-autor" alt="Imágen-autor">
-            </div>
+            </figure>
 
-            <div>
+            <article>
             <h3>Descripción del Autor</h3>
             <p>Una breve biografía sobre el autor</p>
-            </div>
+            </article>
         </section>
 
         <section class="Libros Relacionados">
             <h2>Libros Relacionados</h2>
 
-            <div class="Carrusel">
+            <section class="Carrusel">
                 <button class="FlechaIzq">&larr;</button>
 
-                <div class="Libro1">
+                <article class="Libro1">
                     <img src="portada-LibroRelacionado1" alt="Portada libro relacionado 1">
                     <p>Título del Libro 1</p>
                     <p><strong>$19.99</strong></p>
-                </div>
+                </article>
 
-                <div class="Libro2">
+                <article class="Libro2">
                     <img src="portada-LibroRelacionado2" alt="Portada libro relacionado 2">
                     <p>Título del Libro 2</p>
                     <p><strong>$19.99</strong></p>
-                </div>
+                </article>
 
-                <div class="Libro3">
+                <article class="Libro3">
                     <img src="portada-LibroRelacionado3" alt="Portada libro relacionado 3">
                     <p>Título del Libro 3</p>
                     <p><strong>$19.99</strong></p>
-                </div>
+                </article>
                 <button class="FlechaDer">&rarr;</button>
-            </div>
+            </section>
         </section>
 
     </main>
@@ -99,14 +96,14 @@
             <p>Email: <a href="mailto:info@pawprints.com">info@pawprints.com</a></p>
         </address>
 
-        <div>
+        <section>
             <p>Seguinos en nuestras redes sociales:</p>
             <ul>
                 <li><a href="https://facebook.com">Facebook</a></li>
                 <li><a href="https://twitter.com">Twitter</a></li>
                 <li><a href="https://www.instagram.com/pawmap.ar/">Instagram</a></li>
             </ul>
-        </div>
+        </section>
 
         <p><small>&copy; 2026 PawPrints</small></p>
     </footer>
