@@ -36,35 +36,37 @@
         <section>
             <aside class="filtros">
                 <h2> Filtros </h2>
-                <p>Género</p>
-                <select id = "Genero" name="genero"> 
-                    <option value="" selected disabled>Seleccioná una opción</option>
-                    <option value="Terr">Terror</option>
-                    <option value="Fic">Ficción</option>
-                    <option value="Rom">Romance</option>
-                </select> <!-- lista desplegable -->
-                <p>Precio</p>
-                <label for="numeroMin">Min</label>
-                <input type="number" placeholder="Mín" min="1800" max="900000">
-                <label for="numeroMax">Max</label>
-                <input type="number" placeholder="Máx" min="1800" max="900000">
-                <button type="button">IR</button>
-                <p>*Min. $1800.00 - Max. $900000.00</p>
-                <p>Editorial</p>
-                <select id="Editorial" name="editorial">
-                     <option value="" selected disabled>Seleccioná una opción</option>
-                </select> <!-- lista desplegable -->>
-                <p>Idioma</p>
-                <select id="Idioma" name="idioma">
-                    <option value="" selected disabled>Seleccioná una opción</option>
-                    <option value="in">Inglés</option>
-                    <option value="es">Español</option>
-                    <option value="fr">Francés</option>
-                </select> <!-- lista desplegable -->>
-                <p>Autor</p>
-                <select id="Autor" name="autor">
-                     <option value="" selected disabled>Seleccioná una opción</option>
-                </select> <!-- lista desplegable -->>
+                <form action="/filtros" method="GET">
+                    <p>Género</p>
+                    <select id = "Genero" name="genero"> 
+                        <option value="" selected disabled>Seleccioná una opción</option>
+                        <option value="Terr">Terror</option>
+                        <option value="Fic">Ficción</option>
+                        <option value="Rom">Romance</option>
+                    </select> <!-- lista desplegable -->
+                    <p>Precio</p>
+                    <label for="numeroMin">Min</label>
+                    <input type="number" placeholder="Mín" min="1800" max="900000">
+                    <label for="numeroMax">Max</label>
+                    <input type="number" placeholder="Máx" min="1800" max="900000">
+                    <button type="button">IR</button>
+                    <p>*Min. $1800.00 - Max. $900000.00</p>
+                    <p>Editorial</p>
+                    <select id="Editorial" name="editorial">
+                        <option value="" selected disabled>Seleccioná una opción</option>
+                    </select> <!-- lista desplegable -->>
+                    <p>Idioma</p>
+                    <select id="Idioma" name="idioma">
+                        <option value="" selected disabled>Seleccioná una opción</option>
+                        <option value="in">Inglés</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Francés</option>
+                    </select> <!-- lista desplegable -->>
+                    <p>Autor</p>
+                    <select id="Autor" name="autor">
+                        <option value="" selected disabled>Seleccioná una opción</option>
+                    </select> <!-- lista desplegable -->>
+                </form>
             </aside>
         </section>
         <section>
@@ -133,7 +135,7 @@
             <ul>
                 <li><a href="https://facebook.com">Facebook</a></li>
                 <li><a href="https://twitter.com">Twitter</a></li>
-                <li><a href="https://www.instagram.com/pawmap.ar/">Instagram</a></li>
+                <li><a href="https://instagram.com">Instagram</a></li>
             </ul>
         </address>
 
