@@ -1,99 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PawPrints - Reserva de Libros</title>
-    </head>
-    <body> 
-        <header>
-        <figure>
-            <img src="logo.png" alt="">
-        </figure>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PawPrints - Reserva de Libros</title>
+  </head>
+  <body>
+    <header>
+      <figure>
+        <img src="logo.png" alt="" />
+      </figure>
 
-        <form action="/buscar" method="GET">
-            <label for="busqueda">Buscar en el sitio..</label>
-            <input type="search" id="busqueda" name="busqueda" placeholder="Buscar en el sitio...">
-            <button type="submit">Buscar</button>
-        </form>
+      <form action="/buscar" method="GET">
+        <label for="busqueda">Buscar en el sitio..</label>
+        <input
+          type="search"
+          id="busqueda"
+          name="busqueda"
+          placeholder="Buscar en el sitio..."
+        />
+        <button type="submit">Buscar</button>
+      </form>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="iniciarSesion.html">Iniciar Sesión</a></li>
-                <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
-                <li><a href="catalogo.html">Catalogo</a></li>
-                <li><a href="formulario.html">Reserva</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="iniciarSesion.html">Iniciar Sesión</a></li>
+          <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+          <li><a href="catalogo.html">Catalogo</a></li>
+          <li><a href="formulario.html">Reserva</a></li>
+          <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <header>
-            <h1>Reserva de Libros</h1>
-            <p>Solicitá tu reserva a continución</p>
-        </header>
-        <section class="Formulario">
-            <h2>Formulario de Reserva</h2>
+      <header>
+        <h1>Reserva de Libros</h1>
+        <p>Solicitá tu reserva a continución</p>
+      </header>
+      <section class="Formulario">
+        <h2>Formulario de Reserva</h2>
 
-            <form action="/procesar-reserva" method="POST">
-                <fieldset>
-                    <legend>Datos Personales</legend>
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingresá tu nombre" required>
+        <form action="/procesar-reserva" method="POST">
+          <fieldset>
+            <legend>Datos Personales</legend>
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Ingresá tu nombre"
+              required
+            />
 
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" name="email" id="email" placeholder="Ingresá tu email" required>
-                    
-                    <label for="tel">Teléfono</label>
-                    <input type="tel" id="tel" name="tel" placeholder="Ingresá tu teléfono">
-                </fieldset>
+            <label for="email">Correo electrónico</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Ingresá tu email"
+              required
+            />
 
-                <br>
+            <label for="tel">Teléfono</label>
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              placeholder="Ingresá tu teléfono"
+            />
+          </fieldset>
 
-                <fieldset>
-                    <legend>Detalles del Libro</legend>
-                    <label for="CantLibro">Cantidad de libros a reservar</label>
-                    <input type="number" id="CantLibro" name="CantLibros" placeholder="Ingresá la cantidad" min="1" max="5" required>
+          <br />
 
-                    <label for="SelecLibros">Selección de libro del catálogo</label>
-                    <input list="listaLibros" id="SelecLibros" name="SelecLibros" placeholder="Ingresá el título" required>
-                    <datalist id="listaLibros">
-                        <option value="Libro1"></option>
-                        <option value="Libro2"></option>
-                        <option value="Libro3"></option>
-                    </datalist>
-                </fieldset>
+          <fieldset>
+            <legend>Detalles del Libro</legend>
+            <label for="CantLibro">Cantidad de libros a reservar</label>
+            <input
+              type="number"
+              id="CantLibro"
+              name="CantLibros"
+              placeholder="Ingresá la cantidad"
+              min="1"
+              max="5"
+              required
+            />
 
-                <br>
+            <label for="SelecLibros">Selección de libro del catálogo</label>
+            <input
+              list="listaLibros"
+              id="SelecLibros"
+              name="SelecLibros"
+              placeholder="Ingresá el título"
+              required
+            />
+            <datalist id="listaLibros">
+              <option value="Libro1"></option>
+              <option value="Libro2"></option>
+              <option value="Libro3"></option>
+            </datalist>
+          </fieldset>
 
-                <button type="submit">Reservar Libro</button>
-            </form>
-        </section>
-        
-        <section class="preview">
-            <span>Vista Previa del Libro</span>
-            <img src="portada-LibroRelacionado" alt="Portada libro relacionado">
-            <p><strong>Título del Libro</strong></p> 
-            <p>Autor: Nombre del Autor</p>
-        </section>
+          <br />
 
+          <button type="submit">Reservar Libro</button>
+        </form>
+      </section>
+
+      <section class="preview">
+        <span>Vista Previa del Libro</span>
+        <img src="portada-LibroRelacionado" alt="Portada libro relacionado" />
+        <p><strong>Título del Libro</strong></p>
+        <p>Autor: Nombre del Autor</p>
+      </section>
     </main>
-        <footer>
-            <address>
-                <p>Email: <a href="mailto:info@pawprints.com">info@pawprints.com</a></p>
-            </address>
+    <footer>
+      <address>
+        <p>Email: <a href="mailto:info@pawprints.com">info@pawprints.com</a></p>
+      </address>
 
-            <section>
-                <p>Seguinos en nuestras redes sociales:</p>
-                <ul>
-                    <li><a href="https://facebook.com">Facebook</a></li>
-                    <li><a href="https://twitter.com">Twitter</a></li>
-                    <li><a href="https://instagram.com">Instagram</a></li>
-                </ul>
-            </section>
+      <section>
+        <p>Seguinos en nuestras redes sociales:</p>
+        <ul>
+          <li><a href="https://facebook.com">Facebook</a></li>
+          <li><a href="https://twitter.com">Twitter</a></li>
+          <li><a href="https://instagram.com">Instagram</a></li>
+        </ul>
+      </section>
 
-            <p><small>&copy; 2026 PawPrints</small></p>
-        </footer>
-    </body>
+      <p><small>&copy; 2026 PawPrints</small></p>
+    </footer>
+  </body>
 </html>

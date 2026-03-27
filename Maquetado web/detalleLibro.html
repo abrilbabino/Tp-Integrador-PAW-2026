@@ -1,108 +1,123 @@
-<!DOCTYPE html>
-<html lang="es"> 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PawPrints - Detalle Libro</title>
-    </head>
-    <body>
-        <header>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PawPrints - Detalle Libro</title>
+  </head>
+  <body>
+    <header>
+      <figure>
+        <img src="logo.png" alt="" />
+      </figure>
+
+      <form action="/buscar" method="GET">
+        <label for="busqueda">Buscar en el sitio..</label>
+        <input
+          type="search"
+          id="busqueda"
+          name="busqueda"
+          placeholder="Buscar en el sitio..."
+        />
+        <button type="submit">Buscar</button>
+      </form>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="iniciarSesion.html">Iniciar Sesión</a></li>
+          <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+          <li><a href="catalogo.html">Catalogo</a></li>
+          <li><a href="formulario.html">Reserva</a></li>
+          <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="detalle-libro">
         <figure>
-            <img src="logo.png" alt="">
+          <img src="portadaLibro.png" alt="Portada del Libro" />
+          <figcaption><h2>Título del Libro</h2></figcaption>
         </figure>
 
-        <form action="/buscar" method="GET">
-            <label for="busqueda">Buscar en el sitio..</label>
-            <input type="search" id="busqueda" name="busqueda" placeholder="Buscar en el sitio...">
-            <button type="submit">Buscar</button>
-        </form>
+        <article class="descripcion-libro">
+          <h2>Descripción</h2>
+          <p>Una descripción sobre el libro va aquí</p>
+          <h2>Autor</h2>
+          <p>Nombre del Autor</p>
+        </article>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="iniciarSesion.html">Iniciar Sesión</a></li>
-                <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
-                <li><a href="catalogo.html">Catalogo</a></li>
-                <li><a href="formulario.html">Reserva</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
-            </ul>
-        </nav>
-        </header>
+        <section class="compra-reserva">
+          <p><strong>$19.99</strong></p>
+          <span>Stock Disponible</span>
 
-        <main>
-            <section class="Detalle-Libro">
-                <figure class="Portada-Libro">
-                    <img src="Portada-Libro" alt="Portada del Libro">
-                    <figcaption><h2>Título del Libro</h2></figcaption>
-                </figure>
-                
-                <article class="Descripción Libro">
-                <h2>Descripción</h2>
-                <p>Una descripción sobre el libro va aquí</p>
-                <h2>Autor</h2>
-                <p>Nombre del Autor</p>
-                </article>
+          <form action="/agregar-carrito" method="POST">
+            <button type="submit">Agregar al Carrito</button>
+          </form>
+          <form action="formulario.html" method="GET">
+            <button type="submit">Reservar Gratis</button>
+          </form>
+        </section>
+      </section>
 
-                <section class="Compra-Reserva">
-                    <p><strong>$19.99</strong></p>
-                    <span class="Stock">Stock Disponible</span>
+      <section class="descripcion-autor">
+        <figure>
+          <img src="imagenAutor.png" alt="Fotografía del autor" />
+        </figure>
 
-                    <form action="/agregar-carrito" method="POST">
-                        <button type="submit">Agregar al Carrito</button>
-                    </form>
-                    <br>
-                    <form action="formulario.html" method="GET">
-                        <button type="submit">Reservar Gratis</button>
-                    </form>
-                </section>
+        <article>
+          <h3>Descripción del Autor</h3>
+          <p>Una breve biografía sobre el autor</p>
+        </article>
+      </section>
 
-            <section class="Descripción Autor">
-                <figure class="Imágen Autor">
-                    <img src="Imágen-autor" alt="Imágen-autor">
-                </figure>
+      <section>
+        <h2>Libros Relacionados</h2>
 
-                <article>
-                <h3>Descripción del Autor</h3>
-                <p>Una breve biografía sobre el autor</p>
-                </article>
-            </section>
+        <section class="carrusel">
+          <article class="libro-relacionado">
+            <img
+              src="portada-LibroRelacionado1.jpg"
+              alt="Portada libro relacionado 1"
+            />
+            <p><strong>Título del Libro 1</strong></p>
+            <p><em>$19.99</em></p>
+          </article>
 
-            <section class="Libros-Relacionados">
-                <h2>Libros Relacionados</h2>
+          <article class="libro-relacionado">
+            <img
+              src="portada-LibroRelacionado2.jpg"
+              alt="Portada libro relacionado 2"
+            />
+            <p><strong>Título del Libro 2</strong></p>
+            <p><em>$19.99</em></p>
+          </article>
 
-                <section class="Carrusel">
-                    <article class="libro-relacionado">
-                            <img src="portada-LibroRelacionado1.jpg" alt="Portada libro relacionado 1">
-                            <p><strong>Título del Libro 1</strong></p>
-                            <p><em>$19.99</em></p>
-                    </article>
+          <article class="libro-relacionado">
+            <img
+              src="portada-LibroRelacionado3.jpg"
+              alt="Portada libro relacionado 3"
+            />
+            <p><strong>Título del Libro 3</strong></p>
+            <p><em>$19.99</em></p>
+          </article>
+        </section>
+      </section>
+    </main>
 
-                    <article class="libro-relacionado">
-                            <img src="portada-LibroRelacionado2.jpg" alt="Portada libro relacionado 2">
-                            <p><strong>Título del Libro 2</strong></p>
-                            <p><em>$19.99</em></p>
-                    </article>
+    <footer>
+      <address>
+        <p>Email: <a href="mailto:info@pawprints.com">info@pawprints.com</a></p>
+        <p>Seguinos en nuestras redes sociales:</p>
+        <ul>
+          <li><a href="https://facebook.com">Facebook</a></li>
+          <li><a href="https://twitter.com">Twitter</a></li>
+          <li><a href="https://instagram.com">Instagram</a></li>
+        </ul>
+      </address>
 
-                    <article class="libro-relacionado">
-                            <img src="portada-LibroRelacionado3.jpg" alt="Portada libro relacionado 3">
-                            <p><strong>Título del Libro 3</strong></p>
-                            <p><em>$19.99</em></p>
-                    </article>
-            </section>
-        </main>
-
-        <footer>
-            <address>
-                <p>Email: <a href="mailto:info@pawprints.com">info@pawprints.com</a></p>
-                <p>Seguinos en nuestras redes sociales:</p>
-                <ul>
-                    <li><a href="https://facebook.com">Facebook</a></li>
-                    <li><a href="https://twitter.com">Twitter</a></li>
-                    <li><a href="https://instagram.com">Instagram</a></li>
-                </ul>
-            </address>
-
-            <p><small>&copy; 2026 PawPrints</small></p>
-        </footer>
-    </body>
+      <p><small>&copy; 2026 PawPrints</small></p>
+    </footer>
+  </body>
 </html>
