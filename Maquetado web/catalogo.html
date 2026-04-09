@@ -10,7 +10,7 @@
   <body>
     <header>
       <figure>
-        <img src="logo.png" alt="" />
+        <img src="img/logo.png" alt="" />
       </figure>
 
       <form action="/buscar" method="GET">
@@ -37,12 +37,17 @@
     </header>
 
     <main>
-      <h1>Catálogo de Libros</h1>
-      <p>Explorá nuestra extensa colección de libros de diversos géneros.</p>
+      <header class="hero-catalogo">
+        <h1>Catálogo de Libros</h1>
+        <p>Explorá nuestra extensa colección de libros de diversos géneros.</p>
+      </header>
 
       <section>
-        <aside class="filtros">
-          <h2>Filtros</h2>
+        <details class="filtros">
+          <summary>
+            <img src="img/FILTRAR.png" alt="Iconos de filtros" class="icono-png">
+            FILTRAR
+          </summary>
           <form action="/filtros" method="GET">
             <p>Género</p>
             <select id="Genero" name="genero">
@@ -63,7 +68,7 @@
             <select id="Editorial" name="editorial">
               <option value="" selected disabled>Seleccioná una opción</option>
             </select>
-            <!-- lista desplegable -->>
+            <!-- lista desplegable -->
             <p>Idioma</p>
             <select id="Idioma" name="idioma">
               <option value="" selected disabled>Seleccioná una opción</option>
@@ -71,16 +76,16 @@
               <option value="es">Español</option>
               <option value="fr">Francés</option>
             </select>
-            <!-- lista desplegable -->>
+            <!-- lista desplegable -->
             <p>Autor</p>
             <select id="Autor" name="autor">
               <option value="" selected disabled>Seleccioná una opción</option>
             </select>
-            <!-- lista desplegable -->>
+            <!-- lista desplegable -->
           </form>
-        </aside>
+        </details>
       </section>
-      <section>
+      <section class="grilla-libros">
         <article>
           <img src="portada-libro1" alt="Portada del libro 1" />
           <p><strong>Título del Libro 1</strong></p>
@@ -135,7 +140,7 @@
           <a href="detalleLibro.html">Ver más</a>
         </article>
 
-        <button type="button">Cargar Más</button>
+        <button type="button" class="btn-cargar">Cargar Más</button>
       </section>
     </main>
 
