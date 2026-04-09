@@ -1,8 +1,6 @@
 @import url(reset.css);
 
-/* =========================================
-   1. VARIABLES GLOBALES
-========================================= */
+/* VARIABLES GLOBALES */
 :root {
     --color-violeta: #662483; 
     --color-azul: #283583;
@@ -17,9 +15,7 @@
     --fuente-cuerpo: 'Open Sans', sans-serif;
 }
 
-/* =========================================
-   2. ESTILOS BASE Y TIPOGRAFÍA
-========================================= */
+
 body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
@@ -41,9 +37,7 @@ a:hover, .btn-cargar:hover {
     color: var(--color-violeta); 
 }
 
-/* =========================================
-   3. HEADER Y NAVEGACIÓN (Base Celular)
-========================================= */
+/* Base Celular */
 body > header {
     display: flex; 
     flex-direction: row;
@@ -203,28 +197,28 @@ main > section:nth-of-type(1) article h3 {
 }
 
 /* --- TIENDA FÍSICA --- */
-main > section:nth-of-type(2) {
+main > .tienda-fisica {
     padding: 4rem 5%;
     background-color: var(--color-gris-claro);
 }
 
-main > section:nth-of-type(2) figure {
+main > .tienda-fisica figure {
     margin-bottom: 2rem;
 }
 
-main > section:nth-of-type(2) figure img {
+main > .tienda-fisica figure img {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
 
-main > section:nth-of-type(2) figcaption h2 {
+main > .tienda-fisica figcaption h2 {
     color: var(--color-azul);
     margin-top: 1.5rem;
     font-size: 2rem;
 }
 
-main > section:nth-of-type(2) address {
+main > .tienda-fisica address {
     background-color: white;
     padding: 2rem;
     border-radius: 10px;
@@ -232,7 +226,7 @@ main > section:nth-of-type(2) address {
     font-style: normal; 
 }
 
-main > section:nth-of-type(2) address ul {
+main > .tienda-fisica address ul {
     margin-top: 1rem;
     padding-left: 1rem;
 }
@@ -297,8 +291,7 @@ footer p small {
 .grilla-libros {
     display: grid; 
     grid-template-columns: repeat(2, 1fr); /* ¡Lo obliga a tener 2 columnas iguales! */
-    gap: 1.6rem; /* separación entre los libros */
-
+    
 }
 
 .grilla-libros article {
@@ -307,6 +300,15 @@ footer p small {
     border: 1px solid var(--color-gris-claro);
     text-align: center;
     border-bottom: 4px solid var(--color-amarillo); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 1rem;
+    height: 250px;
+}
+
+.grilla-libros article:hover {
+    transform: translateY(-5px); /* Se levanta un poquito */
+    box-shadow: 0 10px 200px rgba(0, 0, 0, 0.12); /* Sombra más fuerte */
 }
 
 .grilla-libros article img {
@@ -320,20 +322,26 @@ footer p small {
     margin-bottom: 0.5rem;
 }
 
+.grilla-libros article p:nth-of-type(3) {
+    font-weight: 800;
+    color: var(--color-violeta);
+    font-size: 1rem;
+}
+
+
 .btn-cargar {
-    display: block;
     grid-column: span 2; /* ocupa las 2 columnas" */
     width: 250px; 
-    margin:  auto;
+    margin:  3.5rem auto;
     padding: 1rem 2rem;
     background-color: var(--color-magenta);
-    color: white;
+    color: var(--color-fondo);
     border-radius: 30px;
     transition: background-color 0.3s, transform 0.3s;
     border: none;
-    text-transform: capitalize; 
-    letter-spacing: 0.55px;
-    font-size: 0.85rem;
+    text-transform: uppercase; 
+    letter-spacing: 0.65px;
+    font-weight: 800;
     color: var(--color-fondo);    
 }
 
@@ -387,7 +395,7 @@ footer p small {
     margin-top: 3rem;
     margin-bottom: 0.2rem;
     width: 100%;
-    font-weight: 700;
+    font-weight: 800;
 
 }
 
@@ -401,33 +409,28 @@ footer p small {
     border-radius: 8px;
     font-family: var(--fuente-cuerpo);
     outline: none; 
-    
-    
 }
 
 .filtros form button {
-    
     background-color: var(--color-azul);
     color: var(--color-fondo);
     border: none;
-    padding: 0.8rem 3rem; 
+    padding: 1rem 3rem; 
     border-radius: 30px;
     cursor: pointer;
     font-family: var(--fuente-cuerpo);
-    margin: 0.5rem; /* Lo centramos horizontalmente */
-    margin-top: 0.3rem;
+    margin-left: 1.5rem;
     transition: background-color 0.3s, transform 0.3s;
     
 }
 
 .filtros form input[type="number"] {
     margin: 0.5rem; 
-    flex: 1; /* Hace que las dos cajitas midan exactamente lo mismo */
-    padding: 0.5rem;
-    font-weight: 600;
+    padding: 0.6rem;
+    font-weight: 800;
     font-size: 1rem;
     color: var(--color-violeta);
-    max-width: 130px;
+    max-width: 115px;
 }
 
 /*cambios para PC */
@@ -441,7 +444,6 @@ footer p small {
     }
 
     header form {
-         
         min-width: 350px;
         max-width: 600px; /* Tamaño ideal para el centro de la pantalla */
         margin-left: auto; /* Absorbe el espacio sobrante a la izquierda y lo empuja a la derecha */
@@ -471,7 +473,7 @@ footer p small {
     }
 
     body > header nav {
-        width: auto; /* ¡CLAVE! Le sacamos el 100% que venía del celular */
+        width: auto; /*  Le sacamos el 100% que venía del celular */
         margin-top: 0; /* Le limpiamos el margen superior que le habíamos puesto */
         margin-right: 2rem;
         
@@ -494,7 +496,7 @@ footer p small {
         min-height: 50vh; 
     }
 
-    /* Promociones en 3 columnas (CSS GRID) */
+    /* Promociones */
     main > section:nth-of-type(1) {
         display: flex;
         flex-wrap: wrap;
@@ -551,5 +553,47 @@ footer p small {
         display: block;
         flex: 1;
     }
+
+    .catalago-main {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        column-gap: 3rem;
+        align-items: start; /* Evita que los filtros se estiren para abajo */
+    }
+
+    /* El hero y el botón ocupan todo el ancho */
+    .catalago-main .hero-catalogo,
+    .catalago-main .btn-cargar {
+        grid-column: 1 / -1;
+        margin-bottom: 6rem;
+    }
+
+    
+    .catalago-main .filtros summary {
+        display: none; 
+    }
+
+    /* 3. Pisamos el CSS rebelde del index para la grilla y le damos 3 columnas */
+    .catalago-main .grilla-libros {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas  */
+    }
+
+    .catalago-main .grilla-libros article {
+        padding: 4rem 0.5rem;
+        margin: 0rem 5.8rem;
+        min-width: 150px;
+    }
+    
+    /* Ajustamos el botoncito IR y los inputs para que no se aprieten */
+    .catalago-main .filtros form input[type="number"] {
+        max-width: 80px;
+    }
+    
+    .catalago-main .filtros form button {
+        margin-left: 0.2rem;
+        padding: 0.6rem 1rem;
+    }
+
 
 }
