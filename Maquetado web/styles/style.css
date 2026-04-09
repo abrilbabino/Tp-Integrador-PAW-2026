@@ -21,6 +21,7 @@ body {
     color: var(--color-texto);
     font-family: var(--fuente-cuerpo); 
     line-height: 1.6; 
+    font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,7 +35,7 @@ a{
 }
 
 a:hover, .btn-cargar:hover {
-    color: var(--color-violeta); 
+    color: var(--color-magenta); 
 }
 
 /* Base Celular */
@@ -44,15 +45,11 @@ body > header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-fondo); 
     border-bottom: 4px solid var(--color-amarillo); 
-    
-     /* Ajusté el padding para que no sea tan gigante arriba y abajo */
-
+    background-color: var(--color-fondo);
     position: sticky;
     top: 0; 
-    z-index: 1000;
-    
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos al hacer scroll */
 }
 
 header figure img {
@@ -75,13 +72,9 @@ header form input[type="search"] {
     width: 100%;
     max-width: 280px;
     min-width: 150px; /* Ancho mínimo */
-    padding: 0.5rem 1rem; 
+    padding: 0.5rem; 
     border: 1.5px solid var(--color-azul); 
     border-radius: 25px; 
-    font-family: var(--fuente-cuerpo);
-    outline: none; 
-
-   
     background-image: url('../img/lupa.png'); /* Asegúrate de que la ruta sea correcta */
     background-repeat: no-repeat;
     background-position: right 10px center; /* La acomodamos a la derecha y centrada verticalmente */
@@ -94,16 +87,15 @@ header form button {
 
 body > header nav {
     width: 100%; /* Esto obliga a la caja del menú a bajar y ocupar toda la pantalla */
-    margin-top: 1rem; /* Lo separa un poco del buscador */
+    margin-top: 0.2rem; /* Lo separa un poco del buscador */
 }
 
 nav ul {
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: center;
-    gap: 0.5rem;  
+    gap: auto;  
 }
 
 nav a {
@@ -111,14 +103,11 @@ nav a {
     text-transform: capitalize; 
     letter-spacing: 0.35px;
     color: var(--color-azul);
-    font-size: 1rem;
-    white-space: nowrap;    
+    white-space: nowrap;   
 }
 
 main > header {
     background-color: var(--color-gris-claro); 
-    background-image: url('../img/fondo-libreria.jpg'); 
-    background-position: center; 
     min-height: 300px; 
     display: flex;
     flex-direction: column;
@@ -130,15 +119,25 @@ main > header {
     border-bottom: 4px solid var(--color-amarillo);
 }
 
+main .inicio-imagen{
+    background-image: url('../img/fondo-libreria.png'); 
+    background-size: cover;
+    background-position: center; 
+    
+}
+
 main > header h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 2px var(--color-amarillo);
 }
 
 main > header p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
+    text-shadow: 2px 2px 2px var(--color-texto);
+    
 }
 
 main > header a {
@@ -151,10 +150,11 @@ main > header a {
     text-shadow: none; 
     transition: background-color 0.3s, transform 0.3s;
     border: none;
+    margin-top: 2rem;
 }
 
 main > header a:hover{
-    background-color: var(--color-verde);
+    background-color: var(--color-amarillo);
     transform: scale(1.05); 
 }
 
@@ -171,35 +171,56 @@ main > section:nth-of-type(1) h2 {
 
 main > section:nth-of-type(1) > p {
     margin-bottom: 3rem;
+    font-size: 1.15rem; 
+    line-height: 1.6;
+    color: var(--color-texto);
 }
 
 main > section:nth-of-type(1) article {
-    background-color: white;
-    padding: 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0 1rem;
+    padding: 2rem;
+    flex-direction: column;
+    background-color: var(--color-fondo);
+    text-align: left;
     border-radius: 10px;
-    margin-bottom: 2rem; /*sino se pega el artículo con el siguiente*/
     border-bottom: 4px solid var(--color-amarillo); 
     transition: transform 0.3s ease;
+    
+
 }
 
 main > section:nth-of-type(1) article:hover {
     transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 main > section:nth-of-type(1) article img {
-    max-width: 80px; 
-    margin-bottom: 1rem;
+    grid-column: 1 / 2; /* Se queda en la columna 1 */
+    grid-row: 1 / 3;
+    width: 100%;
+    height: 200px; /* La hacemos un cuadrado perfecto */
+    object-fit: cover; /* Evita que la foto se deforme o estire */
+    border-radius: 8px;
+    margin: 0;
+
 }
 
 main > section:nth-of-type(1) article h3 {
+    font-size: 1.6rem; 
+    margin-top: 0;
+    margin-bottom: 0.8rem;
     color: var(--color-violeta);
-    margin-bottom: 0.5rem;
+    
 }
 
 /* --- TIENDA FÍSICA --- */
 main > .tienda-fisica {
     padding: 4rem 5%;
     background-color: var(--color-gris-claro);
+    display: flex;
 }
 
 main > .tienda-fisica figure {
@@ -210,6 +231,8 @@ main > .tienda-fisica figure img {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
+
+    
 }
 
 main > .tienda-fisica figcaption h2 {
@@ -455,23 +478,6 @@ footer p small {
         max-width: 500px; 
     }
 
-    header form button {
-        display: inline-block;
-        background-color: var(--color-amarillo);
-        color: var(--color-texto);
-        border: none;
-        padding: 0.6rem 2.2rem; /* Achiqué un poco el botón para que entre bien en celu */
-        border-radius: 25px;
-        cursor: pointer; 
-        font-family: var(--fuente-cuerpo);
-        margin-left:0.2rem;
-    }
-
-    header form button:hover {
-        background-color: var(--color-verde);
-        color: white;
-    }
-
     body > header nav {
         width: auto; /*  Le sacamos el 100% que venía del celular */
         margin-top: 0; /* Le limpiamos el margen superior que le habíamos puesto */
@@ -515,7 +521,7 @@ footer p small {
         margin-bottom: 0;
     }
 
-    /* Tienda Física en 2 columnas (FLEXBOX) */
+    /* Tienda Física en 2 columnas */
     main > section:nth-of-type(2) {
         display: flex;
         align-items: center;
@@ -567,10 +573,9 @@ footer p small {
         grid-column: 1 / -1;
         margin-bottom: 6rem;
     }
-
     
     .catalago-main .filtros summary {
-        display: none; 
+        display: none;
     }
 
     /* 3. Pisamos el CSS rebelde del index para la grilla y le damos 3 columnas */
@@ -582,7 +587,7 @@ footer p small {
     .catalago-main .grilla-libros article {
         padding: 4rem 0.5rem;
         margin: 0rem 5.8rem;
-        min-width: 150px;
+        min-width: 350px;
     }
     
     /* Ajustamos el botoncito IR y los inputs para que no se aprieten */
